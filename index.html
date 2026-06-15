@@ -1,38 +1,246 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Adi Menon</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        h1 {
-            color: #003262;
-        }
-        .hero {
-            text-align: center;
-            padding: 50px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adi Menon | Student Engineer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #1f2937;
+      background: #f8fafc;
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    header h2 {
+      margin: 0;
+      color: #0f172a;
+    }
+
+    nav a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: #334155;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 90px 8%;
+      background: linear-gradient(135deg, #e0f2fe, #ffffff);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+
+    .hero h3 {
+      font-size: 24px;
+      color: #2563eb;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 22px;
+      background: #2563eb;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 70px 8%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 34px;
+      color: #0f172a;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      margin: 20px 0;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #0f172a;
+      color: white;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        display: block;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="hero">
-        <h1>Adi Menon</h1>
-        <h2>Student Engineer • Robotics Leader • Problem Solver</h2>
 
-        <p>
-            Building technology to solve real-world problems through robotics,
-            engineering, and community leadership.
-        </p>
+<header>
+  <h2>Adi Menon</h2>
+  <nav>
+    <a href="#fireguard">Fireguard</a>
+    <a href="#robotics">Robotics</a>
+    <a href="#service">Service</a>
+    <a href="#resume">Resume</a>
+  </nav>
+</header>
 
-        <h3>Featured Project</h3>
-        <p>
-            Fireguard – Autonomous Wildfire Response Robot
-        </p>
+<div class="hero" id="home">
+  <h1>Adi Menon</h1>
+  <h3>Student Engineer • Robotics Leader • Problem Solver</h3>
+  <p>
+    Building autonomous systems and engineering solutions that help people and communities.
+  </p>
+  <a class="button" href="#fireguard">Explore Fireguard →</a>
+</div>
+
+<section id="fireguard">
+  <h2>Featured Project: Fireguard</h2>
+  <div class="card">
+    <h3>Autonomous Wildfire Response Robot</h3>
+    <p>
+      Fireguard is an engineering project focused on wildfire response and community safety.
+      The goal is to explore how robotics, sensors, and autonomous systems can help detect,
+      navigate, and respond to dangerous wildfire conditions.
+    </p>
+
+    <p>
+      This project combines mechanical design, electronics, software, testing, and iteration.
+      It reflects my interest in using engineering to solve real-world problems.
+    </p>
+
+    <div>
+      <span class="tag">Robotics</span>
+      <span class="tag">Autonomous Systems</span>
+      <span class="tag">Wildfire Safety</span>
+      <span class="tag">Engineering Design</span>
     </div>
+  </div>
+</section>
+
+<section id="robotics">
+  <h2>Robotics & Leadership</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Robotics Team Leadership</h3>
+      <p>
+        I participate in robotics as a builder, teammate, and leader, helping design,
+        troubleshoot, and improve engineering systems through teamwork and iteration.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Engineering Mindset</h3>
+      <p>
+        I enjoy breaking complex problems into smaller parts, prototyping solutions,
+        learning from failures, and improving designs through testing.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Mentorship</h3>
+      <p>
+        I value helping younger students learn engineering, robotics, and problem-solving
+        skills through hands-on projects.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="service">
+  <h2>Community Service</h2>
+  <div class="card">
+    <p>
+      Beyond engineering, I believe service is an important part of leadership.
+      My community involvement includes volunteering, tutoring, and supporting programs
+      that help others.
+    </p>
+    <p>
+      These experiences have shaped how I think about technology: engineering should be useful,
+      human-centered, and connected to real needs.
+    </p>
+  </div>
+</section>
+
+<section id="resume">
+  <h2>Resume</h2>
+  <div class="card">
+    <p>
+      A downloadable resume will be added here.
+    </p>
+    <a class="button" href="#">Download Resume</a>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>
+      For academic, robotics, or project-related inquiries, please reach out through the contact
+      information listed on my resume.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Adi Menon</p>
+</footer>
+
 </body>
 </html>
