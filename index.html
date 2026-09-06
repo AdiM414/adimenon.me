@@ -3,279 +3,426 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adi Menon | Student Engineer</title>
+  <title>Adi Menon | Mechanical & Robotics Engineering</title>
+  <meta name="description" content="Portfolio of Adi Menon - Student Engineer, Robotics Leader, and Autonomous Systems Developer." />
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #1f2937;
-      background: #f8fafc;
-      line-height: 1.6;
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: #e2e8f0;
+      --tag-bg: #eff6ff;
+      --tag-text: #1d4ed8;
     }
 
-    header {
-      background: white;
-      padding: 18px 8%;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* Top Navigation Bar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 1rem 10%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      border-bottom: 1px solid #e5e7eb;
-      z-index: 10;
     }
 
-    header h2 { margin: 0; color: #0f172a; }
-
-    nav a {
-      margin-left: 18px;
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text);
       text-decoration: none;
-      color: #334155;
-      font-weight: bold;
+      letter-spacing: -0.02em;
     }
 
+    .nav-links a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero Section */
     .hero {
-      padding: 90px 8%;
-      background: linear-gradient(135deg, #e0f2fe, #ffffff);
-      text-align: center;
+      padding: 5.5rem 0 3.5rem 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .hero h1 {
-      font-size: 52px;
-      margin-bottom: 10px;
-      color: #0f172a;
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
     }
 
-    .hero h3 {
-      font-size: 24px;
-      color: #2563eb;
+    .hero-avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--border);
+      flex-shrink: 0;
+      background-color: var(--bg-alt);
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 22px;
-      background: #2563eb;
-      color: white;
-      border-radius: 8px;
+    .hero-text h1 {
+      font-size: 2.85rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text .subtitle {
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text .bio {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.55rem 1.15rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
       text-decoration: none;
-      font-weight: bold;
+      transition: all 0.2s ease;
     }
 
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background: var(--bg-alt);
+      border-color: #cbd5e1;
+    }
+
+    /* Sections */
     section {
-      padding: 70px 8%;
-      max-width: 1100px;
-      margin: auto;
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    h2 {
-      font-size: 34px;
-      color: #0f172a;
-      margin-bottom: 20px;
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+      position: relative;
     }
 
-    .card {
-      background: white;
-      padding: 28px;
-      margin: 20px 0;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    /* Project Cards */
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .project-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-subtitle {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Media Box for Demos / Renders */
+    .media-box {
+      background: var(--bg-alt);
+      border: 1px dashed #cbd5e1;
+      border-radius: 8px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
     }
 
     .tag {
-      display: inline-block;
-      background: #dbeafe;
-      color: #1d4ed8;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 14px;
-      margin: 4px;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
     }
 
-    .award-list {
-      padding-left: 20px;
+    /* Grid Layout for Skills & Leadership */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
-    .award-list li {
-      margin-bottom: 10px;
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
     }
 
+    .card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .card p, .card ul {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .card ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Footer */
     footer {
+      padding: 2.5rem 0;
       text-align: center;
-      padding: 40px;
-      background: #0f172a;
-      color: white;
+      color: var(--text-muted);
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 700px) {
-      header {
-        display: block;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
         text-align: center;
+        gap: 1.5rem;
       }
-
-      nav { margin-top: 10px; }
-
-      nav a {
-        display: inline-block;
-        margin: 6px;
+      .btn-group {
+        justify-content: center;
       }
-
-      .hero h1 { font-size: 40px; }
+      .nav-links {
+        display: none; /* simple mobile fallback */
+      }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <h2>Adi Menon</h2>
+  <!-- Top Navigation -->
   <nav>
-    <a href="#fireguard">Fireguard</a>
-    <a href="#robotics">Robotics</a>
-    <a href="#awards">Awards</a>
-    <a href="#service">Service</a>
-    <a href="#resume">Resume</a>
+    <a href="#" class="nav-brand">Adi Menon</a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#robotics">Robotics & Leadership</a>
+      <a href="#skills">Skills</a>
+      <a href="#awards">Honors</a>
+      <a href="assets/Adi_Menon_Resume.pdf" target="_blank">Resume</a>
+    </div>
   </nav>
-</header>
 
-<div class="hero" id="home">
-  <h1>Adi Menon</h1>
-  <h3>Student Engineer • Robotics Leader • Problem Solver</h3>
-  <p>
-    Building autonomous systems and engineering solutions that help people and communities.
-  </p>
-  <a class="button" href="#fireguard">Explore Fireguard →</a>
-</div>
+  <div class="container">
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <img 
+          src="assets/adi-profile.jpg" 
+          alt="Adi Menon" 
+          class="hero-avatar"
+          onerror="this.style.display='none'"
+        />
+        <div class="hero-text">
+          <h1>Adi Menon</h1>
+          <div class="subtitle">Student Engineer • Robotics Leader • Autonomous Systems</div>
+          <p class="bio">
+            High school senior focused on mechanical engineering, autonomous robotics, and mechatronic design. Passionate about building practical technology to solve safety and community challenges.
+          </p>
+          <div class="btn-group">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="assets/Adi_Menon_Resume.pdf" target="_blank" class="btn btn-outline">Resume (PDF)</a>
+            <a href="https://github.com" target="_blank" class="btn btn-outline">GitHub</a>
+            <a href="mailto:contact@adimenon.me" class="btn btn-outline">Email</a>
+          </div>
+        </div>
+      </div>
+    </header>
 
-<section id="fireguard">
-  <h2>Featured Project: Fireguard</h2>
-  <div class="card">
-    <h3>Autonomous Wildfire Response Robot</h3>
-    <p>
-      Fireguard is an engineering project focused on wildfire response and community safety.
-      The goal is to explore how robotics, sensors, and autonomous systems can help detect,
-      navigate, and respond to dangerous wildfire conditions.
-    </p>
+    <!-- Featured Projects Section -->
+    <section id="projects">
+      <h2 class="section-title">Featured Engineering Projects</h2>
 
-    <p>
-      This project combines mechanical design, electronics, software, testing, and iteration.
-      It reflects my interest in using engineering to solve real-world problems.
-    </p>
+      <!-- Fireguard Showcase -->
+      <div class="project-card">
+        <h3>Fireguard — Autonomous Wildfire Response Robot</h3>
+        <div class="project-subtitle">Robotics • Environmental Safety • Embedded Control</div>
+        
+        <!-- Media / CAD / Demo placeholder -->
+        <div class="media-box">
+          📸 Add demo video, CAD model render, or robot photo here (assets/fireguard.jpg)
+        </div>
 
-    <div>
-      <span class="tag">Robotics</span>
-      <span class="tag">Autonomous Systems</span>
-      <span class="tag">Wildfire Safety</span>
-      <span class="tag">Engineering Design</span>
-    </div>
+        <p>
+          An autonomous ground system designed to assess high-risk wildfire zones and assist emergency responders. Integrates mechanical drivetrain design, localized sensor arrays for environmental monitoring, and microcontrollers running autonomous path-finding logic.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Autonomous Systems</span>
+          <span class="tag">Mechanical CAD</span>
+          <span class="tag">C++ / Python</span>
+          <span class="tag">Sensor Integration</span>
+          <span class="tag">Rapid Prototyping</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Robotics & Leadership -->
+    <section id="robotics">
+      <h2 class="section-title">Robotics & Leadership</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h4>Team Build & Strategy Lead</h4>
+          <p>
+            Oversee mechanical design, drivetrain prototyping, and iterative testing through rigorous engineering review and competition prep.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Iterative Prototyping</h4>
+          <p>
+            Experience converting initial CAD models into functional physical hardware using 3D printing, laser cutting, and custom assemblies.
+          </p>
+        </div>
+        <div class="card">
+          <h4>STEM Mentorship</h4>
+          <p>
+            Work with younger students to teach foundational robotics mechanics, electronics wiring, and troubleshooting techniques.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Community Service</h4>
+          <p>
+            Active volunteer in regional environmental and educational initiatives, emphasizing human-centered engineering applications.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Tools -->
+    <section id="skills">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h4>Mechanical & Design</h4>
+          <p>CAD (SolidWorks / Onshape), Rapid Prototyping, 3D Printing (FDM), Mechanism Design, Stress & Load Analysis basics.</p>
+        </div>
+        <div class="card">
+          <h4>Programming & Embedded</h4>
+          <p>C++, Python, Arduino, Sensor Fusion & Telemetry, Git Version Control.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Honors & Awards -->
+    <section id="awards">
+      <h2 class="section-title">Selected Honors</h2>
+      <div class="card">
+        <ul>
+          <li><strong>County Science Fair Recognition</strong> — Fireguard Autonomous Response System</li>
+          <li><strong>Robotics Competition Engineering / Design Award</strong></li>
+          <li><strong>Academic Honors & AP Scholar Designation</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Adi Menon • Hosted on GitHub Pages • adimenon.me</p>
+    </footer>
   </div>
-</section>
-
-<section id="robotics">
-  <h2>Robotics & Leadership</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Robotics Team Leadership</h3>
-      <p>
-        I participate in robotics as a builder, teammate, and leader, helping design,
-        troubleshoot, and improve engineering systems through teamwork and iteration.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Engineering Mindset</h3>
-      <p>
-        I enjoy breaking complex problems into smaller parts, prototyping solutions,
-        learning from failures, and improving designs through testing.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Mentorship</h3>
-      <p>
-        I value helping younger students learn engineering, robotics, and problem-solving
-        skills through hands-on projects.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section id="awards">
-  <h2>Selected Honors & Awards</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Science & Engineering</h3>
-      <ul class="award-list">
-        <li>County Science Fair Award — Fireguard Autonomous Wildfire Response Robot</li>
-        <li>[Add engineering award here]</li>
-        <li>[Add science fair / research recognition here]</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Robotics</h3>
-      <ul class="award-list">
-        <li>[Add robotics competition award here]</li>
-        <li>[Add team award or leadership recognition here]</li>
-        <li>[Add robotics milestone here]</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Academics & Service</h3>
-      <ul class="award-list">
-        <li>[Add academic honor here]</li>
-        <li>[Add service recognition here]</li>
-        <li>[Add scholarship / certificate here]</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="service">
-  <h2>Community Service</h2>
-  <div class="card">
-    <p>
-      Beyond engineering, I believe service is an important part of leadership.
-      My community involvement includes volunteering, tutoring, and supporting programs
-      that help others.
-    </p>
-    <p>
-      These experiences have shaped how I think about technology: engineering should be useful,
-      human-centered, and connected to real needs.
-    </p>
-  </div>
-</section>
-
-<section id="resume">
-  <h2>Resume</h2>
-  <div class="card">
-    <p>
-      A downloadable resume will be added here.
-    </p>
-    <a class="button" href="#">Download Resume</a>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>
-      For academic, robotics, or project-related inquiries, please reach out through the contact
-      information listed on my resume.
-    </p>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Adi Menon</p>
-</footer>
 
 </body>
 </html>
