@@ -4,231 +4,239 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adi Menon</title>
-<meta name="description" content="Adi Menon — personal site">
+<meta name="description" content="Adi Menon — robotics, AI, and engineering">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-  <span></span><span></span><span></span>
-</button>
-
-<nav class="sidebar" id="sidebar">
-  <a class="sidebar-name" href="#top">Adi Menon</a>
-
-  <div class="nav-group">
-    <p class="nav-heading">Academics</p>
-    <a href="#academics">Coursework</a>
-    <a href="#academics">Awards</a>
-    <a href="#academics">Programming</a>
-  </div>
-
-  <div class="nav-group">
-    <p class="nav-heading">Summers</p>
-    <a href="#summers">Summers &amp; programs</a>
-  </div>
-
-  <div class="nav-group">
-    <p class="nav-heading">Competitions</p>
-    <a href="#competitions">Competitions</a>
-  </div>
-
-  <div class="nav-group">
-    <p class="nav-heading">Projects</p>
+<header class="topbar">
+  <a class="brand" href="#top">ADI MENON</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav">
+    <a href="#awards">Awards</a>
+    <a href="#press">Press</a>
     <a href="#projects">Projects</a>
-  </div>
-
-  <div class="nav-group">
-    <p class="nav-heading">Outside the Lab</p>
-    <a href="#arts">Hobbies</a>
-  </div>
-
-  <div class="nav-group">
-    <p class="nav-heading">Community</p>
-    <a href="#community">Volunteering &amp; work</a>
-  </div>
-
-  <a class="nav-contact" href="#contact">Contact</a>
-</nav>
+    <a href="#robotics">Robotics</a>
+    <a href="#summers">Summers</a>
+    <a href="#community">Community</a>
+    <a class="nav-contact" href="#contact">Contact</a>
+  </nav>
+</header>
 
 <main id="top">
 
   <section class="hero">
-    <div class="hero-photo">
-      <img src="assets/adi_profile_headshot.jpeg" alt="Adi Menon">
+    <div class="hero-media">
+      <img src="assets/photo-placeholder.svg" alt="Adi Menon">
+      <div class="corner corner-tl"></div>
+      <div class="corner corner-br"></div>
     </div>
-    <div class="hero-text">
-      <h1>Hi, I'm Adi.</h1>
+    <div class="hero-content">
+      <p class="hero-tag">// robotics &middot; ai &middot; engineering</p>
+      <h1>Adi Menon</h1>
       <p class="hero-bio">
-        I'm a senior at Pacific Collegiate School in Santa Cruz, CA. I build robots,
-        train AI models, and spend a lot of time in science fair season — with some
-        biking, woodworking, and cooking mixed in when I'm not in the lab.
+        Senior at Pacific Collegiate School, Santa Cruz. I build robots, train AI
+        models, and spend a lot of time in science fair season — 1st place at the
+        MATE ROV World Championship, and currently building an autonomous
+        wildfire-suppression robot.
       </p>
-
-      <p class="right-now-label">Right now I'm&hellip;</p>
-      <ul class="right-now">
-        <li>taking AP Statistics, AP Physics C (E&amp;M), AP Government, and AP Microeconomics</li>
-        <li>building an autonomous wildfire suppression robot</li>
-        <li>working through Linear Algebra through the University of North Dakota</li>
-        <li>serving as VP of ROV Engineering, coming off a 1st place finish at MATE ROV Worlds</li>
-      </ul>
-
       <div class="hero-actions">
         <a class="btn" href="#" download>Resume</a>
-        <a class="btn btn-quiet" href="#contact">Get in touch</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
       </div>
     </div>
   </section>
 
-  <section id="academics" class="block">
-    <h2>Academics</h2>
-    <p class="block-intro">Pacific Collegiate School, Santa Cruz, CA — Class of 2027.</p>
-    <div class="entry-list">
-      <div class="entry">
-        <h3>Coursework</h3>
-        <p>
-          12th grade: AP Statistics, AP English Literature, AP Physics C (E&amp;M), AP Microeconomics, AP Government.
-          Also taking Math 207 (Linear Algebra) through the University of North Dakota for undergraduate credit.
-        </p>
+  <section class="stat-strip">
+    <div class="stat">
+      <span class="stat-num">1st</span>
+      <span class="stat-label">MATE ROV World<br>Championship, 2026</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">6x</span>
+      <span class="stat-label">Santa Cruz County<br>Science Fair wins</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">4.1</span>
+      <span class="stat-label">Weighted GPA</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">200+</span>
+      <span class="stat-label">Community service<br>hours</span>
+    </div>
+  </section>
+
+  <section id="awards" class="block">
+    <div class="block-head">
+      <span class="eyebrow-mono">01 — RECOGNITION</span>
+      <h2>Awards</h2>
+    </div>
+    <div class="award-grid">
+      <div class="award-card">
+        <span class="award-year">2026</span>
+        <h3>ISEF — First Award, $500</h3>
+        <p>Patent and Trademark Office Society</p>
       </div>
-      <div class="entry">
-        <h3>Scores &amp; GPA</h3>
-        <p>SAT: 740 R/W, 720 Math. Weighted GPA 4.1, unweighted 3.83.</p>
+      <div class="award-card">
+        <span class="award-year">2026</span>
+        <h3>Best in Show, Senior Division</h3>
+        <p>Santa Cruz County Science Fair — also ISEF Finalist</p>
       </div>
-      <div class="entry">
-        <h3>Skills</h3>
-        <p>Robotics, electronics, coding, and creative writing.</p>
+      <div class="award-card">
+        <span class="award-year">2026</span>
+        <h3>Distinguished Conrad Innovator</h3>
+        <p>The Conrad Challenge — Fireguard Technology</p>
+      </div>
+      <div class="award-card">
+        <span class="award-year">2026</span>
+        <h3>1st Place, MATE ROV Worlds</h3>
+        <p>Ranger category — X Academy Hephaestus Robotics, VP of ROV Engineering</p>
+      </div>
+      <div class="award-card">
+        <span class="award-year">2025</span>
+        <h3>1st Place, Computer Science</h3>
+        <p>Santa Cruz County Science Fair — plus IEEE and Genius Olympiad awards</p>
+      </div>
+      <div class="award-card">
+        <span class="award-year">2022&ndash;24</span>
+        <h3>1st Place, Physics</h3>
+        <p>Santa Cruz County Science Fair, three years running</p>
       </div>
     </div>
   </section>
 
-  <section id="summers" class="block block-alt">
-    <h2>Summers</h2>
-    <p class="block-intro">Programs and internships, most recent first.</p>
-    <div class="timeline">
-      <div class="timeline-entry">
-        <span class="timeline-year">2026</span>
-        <div>
-          <h3>Stanford University — CS106EA</h3>
-          <p>Completed "Exploring Artificial Intelligence," building foundational literacy in machine learning pipelines, deep learning, and generative AI.</p>
-        </div>
+  <section id="press" class="block block-panel">
+    <div class="block-head">
+      <span class="eyebrow-mono">02 — FEATURED IN</span>
+      <h2>Press</h2>
+    </div>
+    <div class="press-grid">
+      <a class="press-card" href="#">
+        <span class="press-source">Publication name</span>
+        <h3>Headline of the article goes here</h3>
+        <span class="press-link">Read the article &rarr;</span>
+      </a>
+      <a class="press-card" href="#">
+        <span class="press-source">Publication name</span>
+        <h3>Headline of the article goes here</h3>
+        <span class="press-link">Read the article &rarr;</span>
+      </a>
+      <a class="press-card" href="#">
+        <span class="press-source">Publication name</span>
+        <h3>Headline of the article goes here</h3>
+        <span class="press-link">Read the article &rarr;</span>
+      </a>
+    </div>
+    <p class="press-note">Send over the article links and I'll drop the real headlines and publications in here.</p>
+  </section>
+
+  <section id="projects" class="block">
+    <div class="block-head">
+      <span class="eyebrow-mono">03 — BUILDS</span>
+      <h2>Projects</h2>
+    </div>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-media"><img src="assets/photo-placeholder.svg" alt=""></div>
+        <span class="project-year">2026</span>
+        <h3>Autonomous Wildfire Suppression Robot</h3>
+        <p>A model prototype that can move, sense, and extinguish fire in rough terrain.</p>
       </div>
-      <div class="timeline-entry">
-        <span class="timeline-year">2025</span>
-        <div>
-          <h3>Karr Company — Software Intern</h3>
-          <p>Online internship with a UK-based traffic violation app, working on backend development.</p>
-        </div>
+      <div class="project-card">
+        <div class="project-media"><img src="assets/photo-placeholder.svg" alt=""></div>
+        <span class="project-year">2025</span>
+        <h3>Deep Learning for Self-Driving Car Safety</h3>
+        <p>Applying deep learning techniques to improve autonomous vehicle safety.</p>
       </div>
-      <div class="timeline-entry">
-        <span class="timeline-year">2024</span>
-        <div>
-          <h3>Inspirit AI</h3>
-          <p>Completed the AI Intensive course for high school students.</p>
-        </div>
+      <div class="project-card">
+        <div class="project-media"><img src="assets/photo-placeholder.svg" alt=""></div>
+        <span class="project-year">2024</span>
+        <h3>Towards Sensor Fusion</h3>
+        <p>Combining data from multiple sensors for more reliable readings.</p>
       </div>
-      <div class="timeline-entry">
-        <span class="timeline-year">2023</span>
-        <div>
-          <h3>UC Scout — Introduction to Java</h3>
-          <p>Online coursework building a foundation in Java programming.</p>
-        </div>
+      <div class="project-card">
+        <div class="project-media"><img src="assets/photo-placeholder.svg" alt=""></div>
+        <span class="project-year">2023</span>
+        <h3>Ultrasonic Eyes</h3>
+        <p>Exploring ultrasonic sensing as an alternative way to detect obstacles.</p>
       </div>
     </div>
   </section>
 
-  <section id="competitions" class="block">
-    <h2>Competitions</h2>
-    <p class="block-intro">Science fairs and robotics competitions.</p>
+  <section id="robotics" class="block block-panel">
+    <div class="block-head">
+      <span class="eyebrow-mono">04 — ROV PROGRAM</span>
+      <h2>Robotics</h2>
+    </div>
     <div class="entry-list">
       <div class="entry">
         <h3>MATE ROV World Championship</h3>
-        <p>1st place in the Ranger category (2026, Newfoundland &amp; Labrador, Canada) with X Academy Hephaestus Robotics, as VP of ROV Engineering — competing against 47 teams from 15 countries. 3rd place the year before (2025, Michigan).</p>
+        <p>1st place, Ranger category (2026, Newfoundland &amp; Labrador) — VP of ROV Engineering, competing against 47 teams from 15 countries. 3rd place the year before (2025, Michigan).</p>
       </div>
       <div class="entry">
         <h3>MATE ROV Regional Competition</h3>
-        <p>1st place in Northern California (2026), 2nd place (2025 and 2024) — qualifying for Worlds each year.</p>
-      </div>
-      <div class="entry">
-        <h3>Santa Cruz County Science Fair</h3>
-        <p>Best in Show, Senior Division and ISEF Finalist (2026); 1st place, Computer Science (2025); 1st place, Physics (2024, 2023, 2022) — along with IEEE, Air Force, Navy, and other category awards most years.</p>
-      </div>
-      <div class="entry">
-        <h3>International Science and Engineering Fair (ISEF)</h3>
-        <p>First Award of $500 from the Patent and Trademark Office Society (2026); qualified as an Observer (2025).</p>
-      </div>
-      <div class="entry">
-        <h3>The Conrad Challenge</h3>
-        <p>Distinguished Conrad Innovator Award (2026), as captain/founder of the Fireguard Technology team.</p>
+        <p>1st place in Northern California (2026), 2nd place (2025, 2024) — qualifying for Worlds each year.</p>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="block block-alt">
-    <h2>Projects</h2>
-    <p class="block-intro">Independent engineering projects, most recent first.</p>
-    <div class="project-list">
-      <a class="project" href="#">
-        <h3>Autonomous Wildfire Suppression Firefighting Robot (2026)</h3>
-        <p>A model prototype robot that can move, sense, and extinguish fire in rough terrain.</p>
-      </a>
-      <a class="project" href="#">
-        <h3>Using Deep Learning AI to Enable the Safety of Self-Driving Cars (2025)</h3>
-        <p>Applying deep learning techniques to improve safety in autonomous vehicles.</p>
-      </a>
-      <a class="project" href="#">
-        <h3>Towards Sensor Fusion (2024)</h3>
-        <p>Combining data from multiple sensors for more reliable readings.</p>
-      </a>
-      <a class="project" href="#">
-        <h3>Ultrasonic Eyes (2023)</h3>
-        <p>An ultrasonic sensing project exploring alternative ways to detect obstacles.</p>
-      </a>
-      <a class="project" href="#">
-        <h3>Flying High with Drones (2022)</h3>
-        <p>An early project exploring drone flight and control.</p>
-      </a>
+  <section id="summers" class="block">
+    <div class="block-head">
+      <span class="eyebrow-mono">05 — SUMMERS</span>
+      <h2>Programs &amp; internships</h2>
     </div>
-  </section>
-
-  <section id="arts" class="block">
-    <h2>Outside the Lab</h2>
-    <p class="block-intro">What I do when I'm not building or testing something.</p>
-    <div class="entry-list">
-      <div class="entry">
-        <h3>Biking, woodworking, reading, and cooking</h3>
-        <p>A few of the things that keep me busy outside of school, robotics, and science fairs.</p>
+    <div class="timeline-h">
+      <div class="timeline-h-entry">
+        <span class="timeline-h-year">2026</span>
+        <h3>Stanford University</h3>
+        <p>CS106EA — Exploring Artificial Intelligence</p>
+      </div>
+      <div class="timeline-h-entry">
+        <span class="timeline-h-year">2025</span>
+        <h3>Karr Company</h3>
+        <p>Software intern, UK-based traffic violation app</p>
+      </div>
+      <div class="timeline-h-entry">
+        <span class="timeline-h-year">2024</span>
+        <h3>Inspirit AI</h3>
+        <p>AI Intensive for high school students</p>
+      </div>
+      <div class="timeline-h-entry">
+        <span class="timeline-h-year">2023</span>
+        <h3>UC Scout</h3>
+        <p>Introduction to Java</p>
       </div>
     </div>
   </section>
 
-  <section id="community" class="block block-alt">
-    <h2>Community</h2>
-    <p class="block-intro">Volunteering, most recent first.</p>
+  <section id="community" class="block block-panel">
+    <div class="block-head">
+      <span class="eyebrow-mono">06 — COMMUNITY</span>
+      <h2>Volunteering</h2>
+    </div>
     <div class="entry-list">
       <div class="entry">
         <h3>Pacific Collegiate School — 80 hours</h3>
-        <p>Volunteered at school and community events: state park clean-ups, Ironman event support, school orientation, beach clean-ups, math tutoring, Stuff the Bus, and video recording for school events (2023&ndash;2026).</p>
+        <p>State park clean-ups, Ironman event support, school orientation, beach clean-ups, math tutoring, Stuff the Bus (2023&ndash;2026).</p>
       </div>
       <div class="entry">
         <h3>YouthServe — 60 hours</h3>
-        <p>Environmental clean-ups, graffiti removal, native plant restoration, beach clean-ups, and food bank sorting and packaging (2024).</p>
+        <p>Environmental clean-ups, graffiti removal, native plant restoration, food bank sorting (2024).</p>
       </div>
       <div class="entry">
         <h3>Teen Kitchen Project — 60 hours</h3>
-        <p>Prepared and cooked nourishing meals for Santa Cruz County families facing cancer and other life-threatening illnesses (2023).</p>
+        <p>Cooked meals for Santa Cruz County families facing cancer and other serious illnesses (2023).</p>
       </div>
     </div>
   </section>
 
   <section id="contact" class="block contact-block">
     <h2>Get in touch</h2>
-    <p class="block-intro">
-      Reach out by email or text.
-    </p>
     <a class="btn" href="mailto:menonadi4@gmail.com">menonadi4@gmail.com</a>
   </section>
 
