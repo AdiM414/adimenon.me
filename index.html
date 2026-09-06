@@ -1,844 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adi Menon</title>
-  <meta name="description" content="Adi Menon — Student Engineer, Robotics Leader, and Autonomous Systems Developer." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
-
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #ffffff;
-      --bg-alt: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #0f172a;
-      --text-secondary: #475569;
-      --text-muted: #64748b;
-      --text-light: #94a3b8;
-      --border: #e2e8f0;
-      --border-hover: #cbd5e1;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --tag-bg: #eff6ff;
-      --tag-text: #1d4ed8;
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-      --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* Top Sticky Navigation */
-    header {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      z-index: 1000;
-    }
-
-    .nav-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0.95rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-brand {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: -0.025em;
-    }
-
-    .nav-menu {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      list-style: none;
-    }
-
-    .nav-item {
-      position: relative;
-    }
-
-    .nav-link, .dropdown-toggle {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.92rem;
-      font-weight: 500;
-      padding: 0.4rem 0.2rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      transition: color 0.15s ease;
-    }
-
-    .nav-link:hover, .dropdown-toggle:hover {
-      color: var(--text);
-    }
-
-    .chevron {
-      width: 13px;
-      height: 13px;
-      transition: transform 0.2s ease;
-      color: var(--text-muted);
-    }
-
-    .dropdown:hover .chevron {
-      transform: rotate(180deg);
-    }
-
-    /* Elevated Dropdown Menu */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      padding-top: 12px;
-      z-index: 1001;
-      width: 280px;
-    }
-
-    .dropdown-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      box-shadow: var(--shadow-lg);
-      padding: 0.6rem;
-      list-style: none;
-    }
-
-    .dropdown:hover .dropdown-content,
-    .dropdown:focus-within .dropdown-content {
-      display: block;
-      animation: navDropdownFade 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes navDropdownFade {
-      from {
-        opacity: 0;
-        transform: translate(-50%, -6px);
-      }
-      to {
-        opacity: 1;
-        transform: translate(-50%, 0);
-      }
-    }
-
-    .dropdown-card li a {
-      display: block;
-      padding: 0.65rem 0.85rem;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background-color 0.15s ease;
-    }
-
-    .dropdown-card li a:hover {
-      background-color: var(--bg-alt);
-    }
-
-    .dropdown-card .item-title {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .dropdown-card .item-desc {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    /* Resume Button in Navbar */
-    .btn-nav-resume {
-      padding: 0.4rem 0.9rem;
-      border-radius: 6px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid var(--border);
-      color: var(--text);
-      background: var(--bg);
-      transition: all 0.15s ease;
-    }
-
-    .btn-nav-resume:hover {
-      background: var(--bg-alt);
-      border-color: var(--border-hover);
-    }
-
-    /* Mobile Hamburger Menu */
-    .menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text);
-      cursor: pointer;
-      padding: 6px;
-    }
-
-    /* Layout Wrapper */
-    main {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 5rem 0 3.5rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-    }
-
-    .hero-avatar-wrap {
-      flex-shrink: 0;
-    }
-
-    .hero-avatar {
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--border);
-      background: var(--bg-alt);
-      box-shadow: var(--shadow-md);
-      display: block;
-    }
-
-    .hero-content h1 {
-      font-size: 2.85rem;
-      font-weight: 800;
-      letter-spacing: -0.035em;
-      color: var(--text);
-      line-height: 1.15;
-      margin-bottom: 0.45rem;
-    }
-
-    .hero-content .subtitle {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
-    }
-
-    .hero-content .bio {
-      font-size: 1.02rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      max-width: 620px;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.15s ease;
-      border: 1px solid var(--border);
-      color: var(--text);
-      background: var(--bg);
-    }
-
-    .btn:hover {
-      background: var(--bg-alt);
-      border-color: var(--border-hover);
-    }
-
-    .btn-solid {
-      background: var(--text);
-      color: #ffffff;
-      border-color: var(--text);
-    }
-
-    .btn-solid:hover {
-      background: #1e293b;
-      color: #ffffff;
-      border-color: #1e293b;
-    }
-
-    /* Sections */
-    section {
-      padding: 4.5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-header {
-      margin-bottom: 2.25rem;
-    }
-
-    .section-title {
-      font-size: 1.65rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      color: var(--text);
-    }
-
-    .section-subtitle {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-top: 0.35rem;
-    }
-
-    /* Project Cards (Jonathan Ko Format) */
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--card-bg);
-      padding: 2.25rem;
-      margin-bottom: 2rem;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--border-hover);
-    }
-
-    .project-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      margin-bottom: 0.35rem;
-    }
-
-    .project-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.02em;
-    }
-
-    .project-timeline {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      font-weight: 500;
-    }
-
-    .project-role {
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-    }
-
-    .project-visual {
-      width: 100%;
-      height: 250px;
-      background: var(--bg-alt);
-      border: 1px dashed var(--border-hover);
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    .project-desc {
-      color: var(--text-secondary);
-      font-size: 0.96rem;
-      line-height: 1.65;
-      margin-bottom: 1.4rem;
-    }
-
-    .tag-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-    }
-
-    .badge {
-      background: var(--tag-bg);
-      color: var(--tag-text);
-      padding: 0.25rem 0.65rem;
-      border-radius: 4px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.015em;
-    }
-
-    /* Experience Timeline (Clean Vertical Border) */
-    .timeline {
-      list-style: none;
-      position: relative;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 1.75rem;
-      padding-bottom: 2.25rem;
-      border-left: 2px solid var(--border);
-    }
-
-    .timeline-item:last-child {
-      border-left: 2px solid transparent;
-      padding-bottom: 0;
-    }
-
-    .timeline-node {
-      position: absolute;
-      left: -6px;
-      top: 5px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      border: 2px solid #ffffff;
-      box-shadow: 0 0 0 1px var(--border);
-    }
-
-    .timeline-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.35rem;
-      flex-wrap: wrap;
-    }
-
-    .timeline-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .timeline-org {
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    .timeline-date {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      font-weight: 500;
-    }
-
-    .timeline-text {
-      color: var(--text-secondary);
-      font-size: 0.93rem;
-      line-height: 1.6;
-      margin-top: 0.4rem;
-    }
-
-    /* 2-Column Grid (About & Skills) */
-    .dual-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 1.75rem;
-    }
-
-    .info-card {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.75rem;
-      background: var(--card-bg);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .info-card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.85rem;
-    }
-
-    .info-card p, .info-card ul {
-      color: var(--text-secondary);
-      font-size: 0.92rem;
-      line-height: 1.65;
-    }
-
-    .info-card ul {
-      padding-left: 1.25rem;
-    }
-
-    .info-card ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    /* Footer */
-    footer {
-      padding: 3rem 0;
-      text-align: center;
-      color: var(--text-light);
-      font-size: 0.88rem;
-    }
-
-    footer a {
-      color: var(--text-secondary);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    /* Mobile Responsive Breakpoints */
-    @media (max-width: 768px) {
-      .menu-btn {
-        display: block;
-      }
-
-      .nav-menu {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.98);
-        border-bottom: 1px solid var(--border);
-        padding: 1.25rem 1.5rem;
-        gap: 1rem;
-        box-shadow: var(--shadow-md);
-      }
-
-      .nav-menu.open {
-        display: flex;
-      }
-
-      .dropdown {
-        width: 100%;
-      }
-
-      .dropdown-content {
-        position: static;
-        transform: none;
-        width: 100%;
-        padding-top: 0.5rem;
-        padding-left: 0.75rem;
-      }
-
-      .dropdown-card {
-        box-shadow: none;
-        border: none;
-        background: var(--bg-alt);
-      }
-
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        gap: 1.75rem;
-        padding: 3.5rem 0 2.5rem 0;
-      }
-
-      .hero-content h1 {
-        font-size: 2.35rem;
-      }
-
-      .hero-actions {
-        justify-content: center;
-      }
-
-      .project-top, .timeline-meta {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .project-timeline, .timeline-date {
-        margin-top: 0.2rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adi Menon</title>
+<meta name="description" content="Adi Menon — personal site">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Sticky Top Navigation -->
-  <header>
-    <div class="nav-inner">
-      <a href="#" class="nav-brand">Adi Menon</a>
+<button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
 
-      <!-- Mobile Hamburger Button -->
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
+<nav class="sidebar" id="sidebar">
+  <a class="sidebar-name" href="#top">Adi Menon</a>
 
-      <ul class="nav-menu" id="navMenu">
-        <!-- Projects with Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <button class="dropdown-toggle" id="dropdownBtn" aria-expanded="false">
-            Projects
-            <svg class="chevron" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-            </svg>
-          </button>
-          <div class="dropdown-content">
-            <ul class="dropdown-card">
-              <li>
-                <a href="#fireguard">
-                  <div class="item-title">
-                    <span>🔥</span> Fireguard Robot
-                  </div>
-                  <div class="item-desc">Autonomous wildfire reconnaissance platform</div>
-                </a>
-              </li>
-              <li>
-                <a href="#projects">
-                  <div class="item-title">
-                    <span>⚙️</span> All Engineering Builds
-                  </div>
-                  <div class="item-desc">CAD designs, prototyping & mechatronics</div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
+  <div class="nav-group">
+    <p class="nav-heading">Academics</p>
+    <a href="#academics">Coursework</a>
+    <a href="#academics">Awards</a>
+    <a href="#academics">Programming</a>
+  </div>
 
-        <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-        <li class="nav-item">
-          <a href="assets/Adi_Menon_Resume.pdf" target="_blank" class="btn-nav-resume">Resume</a>
-        </li>
-      </ul>
+  <div class="nav-group">
+    <p class="nav-heading">Summers</p>
+    <a href="#summers">Summers &amp; programs</a>
+  </div>
+
+  <div class="nav-group">
+    <p class="nav-heading">Competitions</p>
+    <a href="#competitions">Competitions</a>
+  </div>
+
+  <div class="nav-group">
+    <p class="nav-heading">Projects</p>
+    <a href="#projects">Projects</a>
+  </div>
+
+  <div class="nav-group">
+    <p class="nav-heading">Arts</p>
+    <a href="#arts">Arts</a>
+  </div>
+
+  <div class="nav-group">
+    <p class="nav-heading">Community</p>
+    <a href="#community">Volunteering &amp; work</a>
+  </div>
+
+  <a class="nav-contact" href="#contact">Contact</a>
+</nav>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-photo">
+      <img src="assets/photo-placeholder.svg" alt="Adi Menon">
     </div>
-  </header>
+    <div class="hero-text">
+      <h1>Hi, I'm Adi.</h1>
+      <p class="hero-bio">
+        Write one or two sentences here about who Adi is — grade, school, and the
+        general kind of things he's curious about. This is the first thing
+        visitors read, so keep it in his own voice.
+      </p>
 
-  <main>
-    <!-- Hero / Profile Intro -->
-    <section class="hero" id="home">
-      <div class="hero-avatar-wrap">
-        <img 
-          src="assets/adi-profile.jpg" 
-          alt="Adi Menon" 
-          class="hero-avatar"
-          onerror="this.style.display='none'"
-        />
-      </div>
-      <div class="hero-content">
-        <h1>Adi Menon</h1>
-        <div class="subtitle">Student Engineer & Robotics Builder</div>
-        <p class="bio">
-          High school senior based in Santa Cruz, CA, dedicated to mechanical engineering, mechatronic design, and autonomous systems. Passionate about prototyping practical hardware solutions that address urgent community safety challenges.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-solid">View Projects</a>
-          <a href="assets/Adi_Menon_Resume.pdf" target="_blank" class="btn">Resume</a>
-          <a href="https://github.com/AdiM414" target="_blank" class="btn">GitHub</a>
-          <a href="mailto:contact@adimenon.me" class="btn">Contact</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="section-header">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">Robotic mechanisms, CAD modeling, and autonomous field systems.</p>
-      </div>
-
-      <!-- Project: Fireguard -->
-      <article class="project-card" id="fireguard">
-        <div class="project-top">
-          <h3 class="project-title">Fireguard: Autonomous Wildfire Response Robot</h3>
-          <span class="project-timeline">2025 – Present</span>
-        </div>
-        <div class="project-role">Lead Mechanical Designer & Autonomous Systems Integrator</div>
-
-        <div class="project-visual">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:8px;">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <polyline points="21 15 16 10 5 21"></polyline>
-          </svg>
-          <div>Place Fireguard media render in <code>assets/fireguard.jpg</code></div>
-        </div>
-
-        <p class="project-desc">
-          Fireguard is an autonomous robotic platform designed to navigate dangerous wildfire terrain, assess situational hazards, and assist emergency teams. Engineered with a custom 3D-printed and aluminum structural chassis, thermal and obstacle-detection sensor fusion, and microcontrollers running autonomous path-finding algorithms.
-        </p>
-
-        <div class="tag-container">
-          <span class="badge">Autonomous Robotics</span>
-          <span class="badge">SolidWorks CAD</span>
-          <span class="badge">Rapid Prototyping</span>
-          <span class="badge">Sensor Fusion</span>
-          <span class="badge">C++ / Python</span>
-          <span class="badge">Field Testing</span>
-        </div>
-      </article>
-    </section>
-
-    <!-- Experience & Leadership Timeline -->
-    <section id="experience">
-      <div class="section-header">
-        <h2 class="section-title">Experience & Leadership</h2>
-        <p class="section-subtitle">Competitive build leadership, hands-on fabrication, and community STEM initiatives.</p>
-      </div>
-
-      <ul class="timeline">
-        <li class="timeline-item">
-          <div class="timeline-node"></div>
-          <div class="timeline-meta">
-            <div>
-              <span class="timeline-title">Mechanical & Build Lead</span> • 
-              <span class="timeline-org">Robotics Team</span>
-            </div>
-            <span class="timeline-date">2024 – Present</span>
-          </div>
-          <p class="timeline-text">
-            Oversee CAD modeling, frame construction, drivetrain prototyping, and iterative testing through competitive tournament cycles. Lead mechanical debugging, component tolerances, and pit-crew strategy.
-          </p>
-        </li>
-
-        <li class="timeline-item">
-          <div class="timeline-node"></div>
-          <div class="timeline-meta">
-            <div>
-              <span class="timeline-title">Student Researcher & Builder</span> • 
-              <span class="timeline-org">Science & Engineering Fair</span>
-            </div>
-            <span class="timeline-date">2025</span>
-          </div>
-          <p class="timeline-text">
-            Conducted independent hardware and software development on the Fireguard robot, receiving regional County Science Fair recognition for robotics innovation and community safety design.
-          </p>
-        </li>
-
-        <li class="timeline-item">
-          <div class="timeline-node"></div>
-          <div class="timeline-meta">
-            <div>
-              <span class="timeline-title">STEM & Robotics Mentor</span> • 
-              <span class="timeline-org">Community Outreach</span>
-            </div>
-            <span class="timeline-date">2024 – 2026</span>
-          </div>
-          <p class="timeline-text">
-            Work with middle school students to teach foundational electronics wiring, motor control basics, and collaborative mechanical assembly skills.
-          </p>
-        </li>
+      <p class="right-now-label">Right now I'm&hellip;</p>
+      <ul class="right-now">
+        <li>working on <em>[a class, project, or subject]</em></li>
+        <li>getting ready for <em>[a competition, audition, or event]</em></li>
+        <li>learning <em>[a skill or hobby]</em></li>
+        <li>reading <em>[a book, or add a link to a project]</em></li>
       </ul>
-    </section>
 
-    <!-- About & Skills Dual Column -->
-    <section id="about">
-      <div class="section-header">
-        <h2 class="section-title">About & Skills</h2>
-        <p class="section-subtitle">Technical toolbox, prototyping methods, and academic background.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#" download>Resume</a>
+        <a class="btn btn-quiet" href="#contact">Get in touch</a>
       </div>
+    </div>
+  </section>
 
-      <div class="dual-grid">
-        <div class="info-card">
-          <h3>Technical Skills</h3>
-          <ul>
-            <li><strong>CAD & Mechanical:</strong> SolidWorks, Onshape, 3D Printing (FDM), Mechanism Design, Stress Analysis.</li>
-            <li><strong>Programming & Hardware:</strong> C++, Python, Arduino, Sensor Telemetry, Git.</li>
-            <li><strong>Fabrication:</strong> Rapid Prototyping, Soldering, Component Assembly, Hardware Troubleshooting.</li>
-          </ul>
-        </div>
+  <section id="academics" class="block">
+    <h2>Academics</h2>
+    <p class="block-intro">A short line about school, coursework focus, or academic interests.</p>
+    <div class="entry-list">
+      <div class="entry">
+        <h3>Coursework</h3>
+        <p>List current or favorite classes here.</p>
+      </div>
+      <div class="entry">
+        <h3>Awards</h3>
+        <p>Academic honors, recognitions, or standardized test highlights.</p>
+      </div>
+      <div class="entry">
+        <h3>Programming</h3>
+        <p>Languages, tools, or a link to a GitHub profile.</p>
+      </div>
+    </div>
+  </section>
 
-        <div class="info-card">
-          <h3>Academic Honors</h3>
-          <ul>
-            <li>County Science Fair Recognition — Fireguard Autonomous Wildfire Robot</li>
-            <li>Robotics Competition Engineering & Design Award</li>
-            <li>AP Scholar with Distinction & Academic Honor Roll</li>
-          </ul>
+  <section id="summers" class="block block-alt">
+    <h2>Summers</h2>
+    <p class="block-intro">Programs, internships, or camps — most recent first.</p>
+    <div class="timeline">
+      <div class="timeline-entry">
+        <span class="timeline-year">2026</span>
+        <div>
+          <h3>Program or internship name</h3>
+          <p>One or two sentences on what it was and what he did.</p>
         </div>
       </div>
-    </section>
-  </main>
+      <div class="timeline-entry">
+        <span class="timeline-year">2025</span>
+        <div>
+          <h3>Program or camp name</h3>
+          <p>One or two sentences on what it was and what he did.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Clean Footer -->
-  <footer>
-    <p>© 2026 Adi Menon • <a href="https://adimenon.me">adimenon.me</a></p>
+  <section id="competitions" class="block">
+    <h2>Competitions</h2>
+    <p class="block-intro">Hackathons, math, science, or other competitions.</p>
+    <div class="entry-list">
+      <div class="entry">
+        <h3>Competition name</h3>
+        <p>Result and a sentence about the experience.</p>
+      </div>
+      <div class="entry">
+        <h3>Competition name</h3>
+        <p>Result and a sentence about the experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="block block-alt">
+    <h2>Projects</h2>
+    <p class="block-intro">Things he's built — code, science fair projects, or anything else.</p>
+    <div class="project-list">
+      <a class="project" href="#">
+        <h3>Project name</h3>
+        <p>One-line description of what it does and why he made it.</p>
+      </a>
+      <a class="project" href="#">
+        <h3>Project name</h3>
+        <p>One-line description of what it does and why he made it.</p>
+      </a>
+      <a class="project" href="#">
+        <h3>Project name</h3>
+        <p>One-line description of what it does and why he made it.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="arts" class="block">
+    <h2>Arts</h2>
+    <p class="block-intro">Music, dance, art, or any other creative pursuits.</p>
+    <div class="entry-list">
+      <div class="entry">
+        <h3>Discipline</h3>
+        <p>What he does and how long he's been doing it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="community" class="block block-alt">
+    <h2>Community</h2>
+    <p class="block-intro">Volunteering and work experience.</p>
+    <div class="entry-list">
+      <div class="entry">
+        <h3>Organization or role</h3>
+        <p>What he did there.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="block contact-block">
+    <h2>Get in touch</h2>
+    <p class="block-intro">
+      Swap this for a real email address, or a form, or links to socials.
+    </p>
+    <a class="btn" href="mailto:adi@adimenon.me">adi@adimenon.me</a>
+  </section>
+
+  <footer class="site-footer">
+    <a href="#top">Back to top</a>
   </footer>
 
-  <!-- Script for Mobile Menu & Dropdown Interaction -->
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const navMenu = document.getElementById('navMenu');
-    const dropdownBtn = document.getElementById('dropdownBtn');
+</main>
 
-    // Mobile hamburger toggle
-    menuBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-
-    // Close mobile menu upon clicking any anchor link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-      });
-    });
-
-    // Mobile click support for dropdown
-    dropdownBtn.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        const parent = dropdownBtn.closest('.dropdown');
-        const content = parent.querySelector('.dropdown-content');
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-      }
-    });
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>
