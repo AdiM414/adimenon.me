@@ -1,12 +1,12 @@
 :root {
-  --navy: #12233D;
-  --panel: #1C3B63;
-  --panel-2: #17304F;
-  --line: #EAF1F8;
-  --line-dim: rgba(234, 241, 248, 0.14);
+  --navy: #17181B;
+  --panel: #1F2124;
+  --panel-2: #1C1E21;
+  --line: #F2F2F0;
+  --line-dim: rgba(242, 242, 240, 0.10);
   --signal: #FF6A39;
-  --muted: #8FADCB;
-  --white: #F7FAFD;
+  --muted: #9A9A96;
+  --white: #F5F5F3;
 
   --display: "Space Grotesk", "Inter", sans-serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
