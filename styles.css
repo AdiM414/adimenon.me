@@ -457,7 +457,128 @@ h1, h2, h3 {
 
 .site-footer a:hover { color: var(--white); }
 
-/* ---------- Responsive ---------- */
+/* ---------- Storytelling chapters ---------- */
+
+.chapter {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 2.5rem;
+}
+
+.chapter-panel {
+  max-width: none;
+  background: var(--panel-2);
+  border-top: 1px solid var(--line-dim);
+  border-bottom: 1px solid var(--line-dim);
+}
+
+.chapter-panel > .chapter-marker,
+.chapter-panel > .chapter-body {
+  max-width: 1080px;
+}
+
+.chapter-panel {
+  display: block;
+}
+
+.chapter-panel .chapter-inner {
+  display: grid;
+}
+
+.chapter-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.chapter-num {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--signal);
+  border: 1px solid var(--signal);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chapter-line {
+  width: 1px;
+  flex: 1;
+  background: var(--line-dim);
+}
+
+.chapter-line-end {
+  background: linear-gradient(to bottom, var(--line-dim), transparent);
+}
+
+.chapter-body h2 {
+  font-size: 1.9rem;
+  margin: 0.4rem 0 1.2rem;
+}
+
+.chapter-text {
+  color: var(--muted);
+  max-width: 62ch;
+  margin: 0 0 1.1rem;
+}
+
+.chapter-text strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.chip {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--white);
+  border: 1px solid var(--line-dim);
+  padding: 0.45rem 0.8rem;
+  white-space: nowrap;
+}
+
+.press-inline {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line-dim);
+}
+
+.press-inline-label {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--signal);
+  margin: 0 0 1.25rem;
+}
+
+@media (max-width: 880px) {
+  .chapter {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-marker {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .chapter-line {
+    display: none;
+  }
+}
+
 
 @media (max-width: 880px) {
   .topnav {
