@@ -594,7 +594,47 @@ h1, h2, h3 {
   margin: 0 0 1.25rem;
 }
 
+/* ---------- Media gallery (photos + video) ---------- */
+
+.media-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+}
+
+.media-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--line-dim);
+  cursor: zoom-in;
+}
+
+.video-embed {
+  margin-top: 1.5rem;
+}
+
+.video-embed video {
+  width: 100%;
+  max-width: 640px;
+  display: block;
+  border: 1px solid var(--line-dim);
+  background: #000;
+}
+
+.media-caption {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0.6rem 0 0;
+}
+
 @media (max-width: 880px) {
+  .media-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .topnav {
     position: fixed;
     top: 64px;
