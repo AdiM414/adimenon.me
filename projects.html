@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Adi Menon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">ADI MENON</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav">
+    <a href="index.html">Home</a>
+    <a href="story.html">My Story</a>
+    <a href="academics.html">Academics</a>
+    <a href="awards.html">Awards</a>
+    <a href="robotics.html">Robotics</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="press.html">Press</a>
+    <a href="community.html">Community</a>
+    <a class="nav-contact" href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-header">
+    <span class="eyebrow-mono">// independent engineering</span>
+    <h1>Projects &amp; Research</h1>
+    <p>Science fair projects, 10 hours/week, 17 weeks/year, from 2018 to present.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-marker">
+      <span class="chapter-num">26</span>
+      <span class="chapter-line"></span>
+    </div>
+    <div class="chapter-body">
+      <span class="eyebrow-mono">2026</span>
+      <h2>Autonomous Wildfire Suppression Firefighting Robot</h2>
+      <p class="chapter-text">
+        A model prototype firefighting robot that moves, senses, and extinguishes
+        fire in rough terrain. I was the concept creator on this one, start to
+        finish.
+      </p>
+      <div class="chip-row">
+        <span class="chip">YOLOv8 fire detection</span>
+        <span class="chip">Thermal imaging</span>
+        <span class="chip">Multilayer heat-protection materials</span>
+        <span class="chip">User research w/ Fire Marshal San Jose</span>
+        <span class="chip">Corner-case failure mode analysis</span>
+      </div>
+      <p class="chapter-text" style="margin-top: 1.25rem;">
+        <a href="https://isef.net/project/robo050-autonomous-wildfire-surpression-robot" target="_blank" rel="noopener" class="press-link">Read the full ISEF project write-up &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="chapter chapter-panel">
+    <div class="chapter-marker">
+      <span class="chapter-num">25</span>
+      <span class="chapter-line"></span>
+    </div>
+    <div class="chapter-body">
+      <span class="eyebrow-mono">2025</span>
+      <h2>Using Deep Learning AI to Enable the Safety of Self-Driving Cars</h2>
+      <p class="chapter-text">
+        A purely software-based project comparing two CNN architectures for
+        classifying road signs, to explore safer autonomous driving.
+      </p>
+      <div class="chip-row">
+        <span class="chip">ResNet-50: 77% accuracy</span>
+        <span class="chip">VGG-16: 23% accuracy</span>
+        <span class="chip">3,530 training / 638 testing images</span>
+        <span class="chip">14 road sign categories</span>
+      </div>
+      <p class="chapter-text" style="margin-top: 1.25rem;">
+        VGG-16 likely overfit &mdash; its 138 million parameters exceeded what the
+        dataset needed. Both models held similar testing performance, though,
+        which suggested good generalization overall.
+      </p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-marker">
+      <span class="chapter-num">24</span>
+      <span class="chapter-line"></span>
+    </div>
+    <div class="chapter-body">
+      <span class="eyebrow-mono">2024</span>
+      <h2>Towards Sensor Fusion</h2>
+      <p class="chapter-text">
+        A multimodal sensor fusion project to precisely locate objects in the
+        field of view, combining three different sensing methods into one
+        confirmed reading.
+      </p>
+      <div class="chip-row">
+        <span class="chip">LiDAR</span>
+        <span class="chip">Ultrasonic</span>
+        <span class="chip">Infrared</span>
+      </div>
+      <p class="chapter-text" style="margin-top: 1.25rem;">
+        LiDAR measured reflected laser pulses for precise object maps, ultrasonic
+        sensors measured reflected sound waves, and infrared sensors detected
+        objects well even in direct sunlight. I built a test bed to calibrate the
+        XY location of an obstacle and triangulate its position using all three
+        readings together.
+      </p>
+    </div>
+  </section>
+
+  <section class="chapter chapter-panel">
+    <div class="chapter-marker">
+      <span class="chapter-num">23</span>
+      <span class="chapter-line"></span>
+    </div>
+    <div class="chapter-body">
+      <span class="eyebrow-mono">2023</span>
+      <h2>Ultrasonic Eyes</h2>
+      <p class="chapter-text">
+        Tested an HC-SR04 ultrasonic sensor's accuracy for self-driving car
+        applications, evaluating how temperature, materials, and environmental
+        disruptions affected its readings.
+      </p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-marker">
+      <span class="chapter-num">22</span>
+      <span class="chapter-line chapter-line-end"></span>
+    </div>
+    <div class="chapter-body">
+      <span class="eyebrow-mono">2022</span>
+      <h2>Flying High with Drones</h2>
+      <p class="chapter-text">
+        My first engineering project, entered as a middle schooler &mdash; an
+        early exploration of drone flight and control that placed 1st in Physics
+        at the Santa Cruz County Science Fair.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -51,9 +51,9 @@ h1, h2, h3 {
   z-index: 40;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 2.5rem;
   padding: 1.1rem 2rem;
-  background: rgba(18, 35, 61, 0.88);
+  background: rgba(23, 24, 27, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line-dim);
 }
@@ -65,24 +65,34 @@ h1, h2, h3 {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--white);
+  flex-shrink: 0;
 }
 
 .topnav {
   display: flex;
-  gap: 1.75rem;
+  gap: 1.6rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .topnav a {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   text-decoration: none;
   color: var(--muted);
   transition: color 0.15s ease;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
 
 .topnav a:hover { color: var(--white); }
 
+.topnav a.active {
+  color: var(--white);
+  border-bottom-color: var(--signal);
+}
+
 .nav-contact {
+  margin-left: auto;
   color: var(--signal) !important;
   font-weight: 500;
 }
@@ -91,7 +101,27 @@ h1, h2, h3 {
   display: none;
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Page header (subpages) ---------- */
+
+.page-header {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 2.5rem;
+  border-bottom: 1px solid var(--line-dim);
+}
+
+.page-header h1 {
+  font-size: 2.3rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.page-header p {
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0;
+}
+
+/* ---------- Hero (home only) ---------- */
 
 .hero {
   max-width: 1080px;
@@ -281,7 +311,7 @@ h1, h2, h3 {
 
 .press-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.25rem;
 }
 
@@ -563,22 +593,6 @@ h1, h2, h3 {
   color: var(--signal);
   margin: 0 0 1.25rem;
 }
-
-@media (max-width: 880px) {
-  .chapter {
-    grid-template-columns: 1fr;
-  }
-
-  .chapter-marker {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .chapter-line {
-    display: none;
-  }
-}
-
 
 @media (max-width: 880px) {
   .topnav {

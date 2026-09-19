@@ -1,21 +1,36 @@
-# Adi's site
+# Adi's site — multi-page version
 
-Plain HTML/CSS/JS, no build step needed — works straight on GitHub Pages.
+This replaces the single long-scrolling page with 8 separate pages, linked from
+a top-left menu bar on every page.
 
-## Files
-- `index.html` — page content and structure
-- `styles.css` — all styling
-- `script.js` — mobile menu toggle
-- `assets/photo-placeholder.svg` — swap this out for a real photo
+## Pages
+- `index.html` — Home. Just a brief intro from Adi, nothing else.
+- `story.html` — My Story (the full narrative arc)
+- `academics.html` — Coursework, GPA, SAT, skills
+- `awards.html` — Awards & Honors, grouped by year
+- `robotics.html` — MATE ROV role progression and results
+- `projects.html` — Independent engineering projects, technical detail
+- `press.html` — Real news coverage with links
+- `community.html` — Volunteering + hobbies
+- `contact.html` — Email, phone, resume download
 
-## To customize
-1. Replace placeholder text in `index.html` (bio, "right now" list, section entries, project names/links).
-2. Replace `assets/photo-placeholder.svg` with a real photo — a square-ish JPG/PNG works, and update the `src` in `index.html`'s `.hero-photo`.
-3. Update the resume link (`href="#"` on the Resume button) to a real PDF link (e.g. a Google Drive share link or a PDF you add to the repo).
-4. Update the contact email in the Contact section.
+## Files to upload
+Upload ALL of these to the repo root (same level as CNAME):
+- All 9 `.html` files above
+- `styles.css` (replaces the old one)
+- `script.js` (replaces the old one — simpler now, just handles mobile menu)
+- `assets/adi-resume.pdf` — Adi's resume, wired up to the Contact page download button
+- `assets/photo-placeholder.svg` — kept as a fallback; the real headshot
+  (`assets/adi_profile_headshot.jpeg`) should already be in the repo from
+  before, so no need to re-upload it
 
-## To publish on adimenon.me via GitHub Pages
-1. Push these files to the root of the GitHub repo connected to adimenon.me (or to a `docs/` folder / `gh-pages` branch, depending on how it's set up).
-2. In the repo's Settings → Pages, make sure the source points to wherever you put these files.
-3. Confirm there's a `CNAME` file in the repo containing `adimenon.me` (GitHub Pages needs this for the custom domain to keep working) — if one already exists from before, don't remove it.
-4. Wait a minute or two for GitHub Pages to rebuild, then check adimenon.me.
+## What to do with the OLD index.html
+The old `index.html` was a single long page. This new `index.html` completely
+replaces it — just overwrite it like normal.
+
+## Note on navigation
+Every page's top-left menu is hand-written into that page (no shared template
+— this is plain HTML with no build step), so if you ever want to add/rename a
+menu item, you'll need to update the `<nav class="topnav">` block in all 9
+files to keep them in sync. Let me know if you want help with a batch change
+like that in the future.
