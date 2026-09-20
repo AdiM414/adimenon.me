@@ -600,6 +600,8 @@ h1, h2, h3 {
   position: relative;
   display: flex;
   align-items: center;
+  padding-bottom: 0.9rem;
+  margin-bottom: -0.9rem;
 }
 
 .nav-item > a {
@@ -632,9 +634,11 @@ h1, h2, h3 {
   flex-direction: column;
   gap: 0.15rem;
   box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+  pointer-events: auto;
 }
 
-.nav-item:hover .dropdown-panel {
+.nav-item:hover .dropdown-panel,
+.nav-item:focus-within .dropdown-panel {
   display: flex;
 }
 
