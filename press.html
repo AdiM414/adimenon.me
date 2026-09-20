@@ -11,57 +11,143 @@
 </head>
 <body>
 
-<button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-  <span></span><span></span><span></span>
-</button>
-
-<nav class="sidebar" id="sidebar">
+<header class="topbar">
   <a class="brand" href="index.html">ADI MENON</a>
-  <a class="sidebar-home" href="index.html">Home</a>
-  <div class="nav-group">
-    <a class="nav-group-heading" href="story.html">My Story</a>
-    <a class="sub-link" href="story.html#spark">The Spark</a>
-    <a class="sub-link" href="story.html#building">Building &amp; Learning</a>
-    <a class="sub-link" href="story.html#breakthrough">The Breakthrough</a>
-    <a class="sub-link" href="story.html#next">What's Next</a>
-  </div>
-  <div class="nav-group">
-    <a class="nav-group-heading" href="academics.html">Academics</a>
-    <a class="sub-link" href="academics.html#coursework">Coursework</a>
-    <a class="sub-link" href="academics.html#college-courses">College Coursework</a>
-    <a class="sub-link" href="academics.html#skills">Skills</a>
-  </div>
-  <div class="nav-group">
-    <a class="nav-group-heading" href="awards.html">Awards</a>
-    <a class="sub-link" href="awards.html#awards-2026">2026</a>
-    <a class="sub-link" href="awards.html#awards-2025">2025</a>
-    <a class="sub-link" href="awards.html#awards-2024">2024</a>
-    <a class="sub-link" href="awards.html#awards-2023">2023</a>
-    <a class="sub-link" href="awards.html#awards-2022">2022</a>
-  </div>
-  <div class="nav-group">
-    <a class="nav-group-heading" href="robotics.html">Robotics</a>
-    <a class="sub-link" href="robotics.html#role-progression">Role Progression</a>
-    <a class="sub-link" href="robotics.html#competition-results">Competition Results</a>
-  </div>
-  <div class="nav-group">
-    <a class="nav-group-heading" href="projects.html">Projects</a>
-    <a class="sub-link" href="projects.html#project-2026">2026 — Wildfire Robot</a>
-    <a class="sub-link" href="projects.html#project-2025">2025 — Self-Driving Car AI</a>
-    <a class="sub-link" href="projects.html#project-2024">2024 — Sensor Fusion</a>
-    <a class="sub-link" href="projects.html#project-2023">2023 — Ultrasonic Eyes</a>
-    <a class="sub-link" href="projects.html#project-2022">2022 — Flying Drones</a>
-  </div>
-  <div class="nav-group">
-    <a class="nav-group-heading active" href="press.html">Press</a>
-  </div>
-  <div class="nav-group">
-    <a class="nav-group-heading" href="community.html">Community</a>
-    <a class="sub-link" href="community.html#volunteering">Volunteering</a>
-    <a class="sub-link" href="community.html#hobbies">Hobbies</a>
-  </div>
-  <a class="sidebar-contact" href="contact.html">Contact</a>
-</nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="topnav" id="topnav">
+    <a href="index.html">Home</a>
+    <div class="nav-item">
+      <a href="story.html">My Story <span class="caret">&#9662;</span></a>
+      <div class="dropdown-panel">
+        <div class="dropdown-panel-inner">
+          <a class="dropdown-card" href="story.html#spark">
+            <span class="dropdown-card-title">The Spark</span>
+            <span class="dropdown-card-sub">2020–2023 · CZU fire → first robots</span>
+          </a>
+          <a class="dropdown-card" href="story.html#building">
+            <span class="dropdown-card-title">Building &amp; Learning</span>
+            <span class="dropdown-card-sub">2023–2025 · ROV team, AI research</span>
+          </a>
+          <a class="dropdown-card" href="story.html#breakthrough">
+            <span class="dropdown-card-title">The Breakthrough</span>
+            <span class="dropdown-card-sub">2026 · ROV Worlds win, ISEF, Conrad</span>
+          </a>
+          <a class="dropdown-card" href="story.html#next">
+            <span class="dropdown-card-title">What's Next</span>
+            <span class="dropdown-card-sub">Wildfire robot, senior year</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="academics.html">Academics <span class="caret">&#9662;</span></a>
+      <div class="dropdown-panel">
+        <div class="dropdown-panel-inner">
+          <a class="dropdown-card" href="academics.html#coursework">
+            <span class="dropdown-card-title">Coursework</span>
+            <span class="dropdown-card-sub">9th–12th grade · GPA 4.34</span>
+          </a>
+          <a class="dropdown-card" href="academics.html#college-courses">
+            <span class="dropdown-card-title">College Coursework</span>
+            <span class="dropdown-card-sub">Stanford, UND, UC Scout</span>
+          </a>
+          <a class="dropdown-card" href="academics.html#skills">
+            <span class="dropdown-card-title">Skills</span>
+            <span class="dropdown-card-sub">Coding, electronics, robotics</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="awards.html">Awards <span class="caret">&#9662;</span></a>
+      <div class="dropdown-panel">
+        <div class="dropdown-panel-inner">
+          <a class="dropdown-card" href="awards.html#awards-2026">
+            <span class="dropdown-card-title">2026</span>
+            <span class="dropdown-card-sub">ISEF Award, Best in Show, Conrad Innovator</span>
+          </a>
+          <a class="dropdown-card" href="awards.html#awards-2025">
+            <span class="dropdown-card-title">2025</span>
+            <span class="dropdown-card-sub">1st Computer Science, Genius Olympiad</span>
+          </a>
+          <a class="dropdown-card" href="awards.html#awards-2024">
+            <span class="dropdown-card-title">2024</span>
+            <span class="dropdown-card-sub">1st Physics, Yale STEM award</span>
+          </a>
+          <a class="dropdown-card" href="awards.html#awards-2023">
+            <span class="dropdown-card-title">2023</span>
+            <span class="dropdown-card-sub">1st Physics, CSEF 3rd place</span>
+          </a>
+          <a class="dropdown-card" href="awards.html#awards-2022">
+            <span class="dropdown-card-title">2022</span>
+            <span class="dropdown-card-sub">1st Physics, US Metric award</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="robotics.html">Robotics <span class="caret">&#9662;</span></a>
+      <div class="dropdown-panel">
+        <div class="dropdown-panel-inner">
+          <a class="dropdown-card" href="robotics.html#role-progression">
+            <span class="dropdown-card-title">Role Progression</span>
+            <span class="dropdown-card-sub">Navigator → Circuit Designer → VP Engineering</span>
+          </a>
+          <a class="dropdown-card" href="robotics.html#competition-results">
+            <span class="dropdown-card-title">Competition Results</span>
+            <span class="dropdown-card-sub">1st Worlds 2026, 3rd Worlds 2025</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="projects.html">Projects <span class="caret">&#9662;</span></a>
+      <div class="dropdown-panel">
+        <div class="dropdown-panel-inner">
+          <a class="dropdown-card" href="projects.html#project-2026">
+            <span class="dropdown-card-title">2026 — Wildfire Robot</span>
+            <span class="dropdown-card-sub">YOLOv8 + sensor fusion, photos &amp; video</span>
+          </a>
+          <a class="dropdown-card" href="projects.html#project-2025">
+            <span class="dropdown-card-title">2025 — Self-Driving Car AI</span>
+            <span class="dropdown-card-sub">ResNet-50 vs. VGG-16</span>
+          </a>
+          <a class="dropdown-card" href="projects.html#project-2024">
+            <span class="dropdown-card-title">2024 — Sensor Fusion</span>
+            <span class="dropdown-card-sub">LiDAR + Ultrasonic + IR</span>
+          </a>
+          <a class="dropdown-card" href="projects.html#project-2023">
+            <span class="dropdown-card-title">2023 — Ultrasonic Eyes</span>
+            <span class="dropdown-card-sub">HC-SR04 accuracy testing</span>
+          </a>
+          <a class="dropdown-card" href="projects.html#project-2022">
+            <span class="dropdown-card-title">2022 — Flying Drones</span>
+            <span class="dropdown-card-sub">First engineering project</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <a href="press.html" class="active">Press</a>
+    <div class="nav-item">
+      <a href="community.html">Community <span class="caret">&#9662;</span></a>
+      <div class="dropdown-panel">
+        <div class="dropdown-panel-inner">
+          <a class="dropdown-card" href="community.html#volunteering">
+            <span class="dropdown-card-title">Volunteering</span>
+            <span class="dropdown-card-sub">Aegis Living, PCS, YouthServe, Teen Kitchen</span>
+          </a>
+          <a class="dropdown-card" href="community.html#hobbies">
+            <span class="dropdown-card-title">Hobbies</span>
+            <span class="dropdown-card-sub">Guitar, woodworking, tennis, cooking</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <a class="nav-contact" href="contact.html">Contact</a>
+  </nav>
+</header>
 
 <main>
 
