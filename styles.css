@@ -387,6 +387,15 @@ main {
   gap: 0.4rem;
 }
 
+a.award-card {
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+a.award-card:hover {
+  background: var(--panel);
+}
+
 .award-year {
   font-family: var(--mono);
   font-size: 0.75rem;
