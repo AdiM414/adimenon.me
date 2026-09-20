@@ -13,12 +13,24 @@ const CLOSE_DELAY = 300;
 
 function closeItem(item) {
   item.classList.remove('open');
+  const panel = item.querySelector('.dropdown-panel');
+  if (panel) panel.classList.remove('align-right');
 }
 
 function closeAllExcept(except) {
   navItems.forEach((item) => {
     if (item !== except) closeItem(item);
   });
+}
+
+function positionPanel(item) {
+  const panel = item.querySelector('.dropdown-panel');
+  if (!panel) return;
+  panel.classList.remove('align-right');
+  const rect = panel.getBoundingClientRect();
+  if (rect.right > window.innerWidth) {
+    panel.classList.add('align-right');
+  }
 }
 
 navItems.forEach((item) => {
@@ -31,6 +43,7 @@ navItems.forEach((item) => {
       clearTimeout(closeTimer);
       closeAllExcept(item);
       item.classList.add('open');
+      positionPanel(item);
     });
 
     item.addEventListener('mouseleave', () => {
@@ -48,6 +61,7 @@ navItems.forEach((item) => {
         const isOpen = item.classList.contains('open');
         closeAllExcept(item);
         item.classList.toggle('open', !isOpen);
+        if (!isOpen) positionPanel(item);
       });
     }
   }

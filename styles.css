@@ -814,20 +814,26 @@ main {
 
 .dropdown-panel {
   display: none;
-  position: fixed;
-  top: 61px;
+  position: absolute;
+  top: 100%;
   left: 0;
-  right: 0;
+  min-width: 640px;
   z-index: 60;
+}
+
+.dropdown-panel.align-right {
+  left: auto;
+  right: 0;
 }
 
 .dropdown-panel-inner {
   background: var(--panel-2);
-  padding: 1rem 2.5rem 1.5rem;
+  padding: 1rem 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0;
-  border-top: 1px solid var(--line-dim);
+  border-top: 3px solid var(--signal);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.4);
 }
 
 .nav-item.open .dropdown-panel {
