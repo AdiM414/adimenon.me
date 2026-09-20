@@ -200,6 +200,95 @@ main {
   margin: 0;
 }
 
+/* Sidebar TOC thumbnails (used on Projects) */
+
+.toc-thumb {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  padding: 0;
+  border-left: none;
+}
+
+.toc-thumb img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--line-dim);
+  transition: border-color 0.15s ease;
+}
+
+.toc-thumb span {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.35;
+  transition: color 0.15s ease;
+}
+
+.toc-thumb:hover,
+.toc-thumb.active {
+  border-left: none;
+}
+
+.toc-thumb:hover img,
+.toc-thumb.active img {
+  border-color: var(--signal);
+}
+
+.toc-thumb:hover span,
+.toc-thumb.active span {
+  color: var(--white);
+}
+
+/* Horizontal gallery quick-jump (top of Projects page) */
+
+.project-gallery-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin: 0 0 3.5rem;
+}
+
+.gallery-thumb {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.gallery-thumb img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid var(--line-dim);
+  transition: border-color 0.15s ease;
+}
+
+.gallery-thumb span {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: center;
+  transition: color 0.15s ease;
+}
+
+.gallery-thumb:hover img {
+  border-color: var(--signal);
+}
+
+.gallery-thumb:hover span {
+  color: var(--white);
+}
+
+@media (max-width: 620px) {
+  .project-gallery-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 1080px) {
   .page-toc {
     display: none;
