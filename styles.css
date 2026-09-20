@@ -594,7 +594,181 @@ h1, h2, h3 {
   margin: 0 0 1.25rem;
 }
 
-/* ---------- Media gallery (photos + video) ---------- */
+/* ---------- Nav dropdowns ---------- */
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item > a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color 0.15s ease;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-item > a:hover { color: var(--white); }
+
+.nav-item > a.active {
+  color: var(--white);
+  border-bottom-color: var(--signal);
+}
+
+.dropdown-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.9rem;
+  min-width: 300px;
+  background: var(--panel);
+  border: 1px solid var(--line-dim);
+  padding: 0.5rem;
+  z-index: 60;
+  flex-direction: column;
+  gap: 0.15rem;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+}
+
+.nav-item:hover .dropdown-panel {
+  display: flex;
+}
+
+a.dropdown-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-decoration: none;
+  padding: 0.65rem 0.75rem;
+  border-radius: 2px;
+  border-bottom: none;
+  transition: background 0.12s ease;
+}
+
+a.dropdown-card:hover {
+  background: var(--panel-2);
+  color: inherit;
+}
+
+.dropdown-card-title {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.dropdown-card-sub {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+@media (max-width: 880px) {
+  .nav-item {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .dropdown-panel {
+    display: flex;
+    position: static;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-left: 2px solid var(--line-dim);
+    background: transparent;
+    box-shadow: none;
+    padding-left: 0.75rem;
+    width: 100%;
+  }
+}
+
+
+
+.year-cards-section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1rem 2rem 4.5rem;
+}
+
+.year-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--line-dim);
+  border: 1px solid var(--line-dim);
+}
+
+.year-card {
+  background: var(--navy);
+  padding: 1.75rem 1.5rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: background 0.15s ease;
+}
+
+.year-card:hover {
+  background: var(--panel);
+}
+
+.year-card-year {
+  font-family: var(--display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--signal);
+}
+
+.year-card-headline {
+  font-size: 0.92rem;
+  color: var(--white);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.year-card-more {
+  margin-top: auto;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+@media (max-width: 880px) {
+  .year-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Year detail pages ---------- */
+
+.year-nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem 0;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.year-nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.year-nav a:hover { color: var(--signal); }
+
+.year-nav .disabled {
+  color: rgba(154, 154, 150, 0.3);
+  pointer-events: none;
+}
+
+
 
 .media-gallery {
   display: grid;
