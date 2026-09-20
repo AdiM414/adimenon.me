@@ -72,3 +72,31 @@ document.querySelectorAll('.dropdown-card').forEach((link) => {
     closeAllExcept(null);
   });
 });
+
+// On-this-page TOC: highlight the current section while scrolling
+const pageTocLinks = document.querySelectorAll('.page-toc a');
+
+if (pageTocLinks.length) {
+  const sectionMap = new Map();
+  pageTocLinks.forEach((link) => {
+    const id = link.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (target) sectionMap.set(target, link);
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const link = sectionMap.get(entry.target);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          pageTocLinks.forEach((l) => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    },
+    { rootMargin: '-100px 0px -70% 0px', threshold: 0 }
+  );
+
+  sectionMap.forEach((_, section) => observer.observe(section));
+}

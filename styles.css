@@ -138,6 +138,85 @@ main {
   margin: 0;
 }
 
+/* ---------- Page shell (content + on-this-page TOC) ---------- */
+
+.page-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.page-toc {
+  flex: 0 0 190px;
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-top: 4.5rem;
+}
+
+.page-toc-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.page-toc a {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.3rem 0 0.3rem 0.65rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.65rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  line-height: 1.35;
+}
+
+.page-toc a:hover {
+  color: var(--white);
+  border-left-color: var(--line-dim);
+}
+
+.page-toc a.active {
+  color: var(--white);
+  border-left-color: var(--signal);
+}
+
+.page-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-main .block,
+.page-main .chapter {
+  max-width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 1080px) {
+  .page-toc {
+    display: none;
+  }
+
+  .page-shell {
+    display: block;
+    padding: 0;
+  }
+
+  .page-main .block,
+  .page-main .chapter {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+}
+
 /* ---------- Hero (home only) ---------- */
 
 .hero {
@@ -669,23 +748,20 @@ main {
 
 .dropdown-panel {
   display: none;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 61px;
   left: 0;
-  margin-top: 0;
-  padding-top: 0.9rem;
-  min-width: 300px;
+  right: 0;
   z-index: 60;
 }
 
 .dropdown-panel-inner {
-  background: var(--panel);
-  border: 1px solid var(--line-dim);
-  padding: 0.5rem;
+  background: var(--panel-2);
+  padding: 1rem 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+  gap: 0;
+  border-top: 1px solid var(--line-dim);
 }
 
 .nav-item.open .dropdown-panel {
@@ -693,35 +769,24 @@ main {
 }
 
 a.dropdown-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
+  display: block;
   text-decoration: none;
-  padding: 0.65rem 0.75rem;
-  border-radius: 2px;
-  border-bottom: none;
-  text-transform: none;
-  letter-spacing: normal;
-  font-weight: 400;
-  transition: background 0.12s ease;
+  padding: 0.7rem 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: color 0.12s ease;
 }
 
 a.dropdown-card:hover,
 a.dropdown-card:focus {
-  background: var(--panel-2);
-  color: inherit;
-}
-
-.dropdown-card-title {
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--white);
+  color: var(--signal);
 }
 
 .dropdown-card-sub {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--muted);
+  display: none;
 }
 
 @media (max-width: 880px) {
@@ -734,7 +799,6 @@ a.dropdown-card:focus {
   .dropdown-panel {
     display: none;
     position: static;
-    padding-top: 0;
     width: 100%;
   }
 
@@ -743,12 +807,16 @@ a.dropdown-card:focus {
   }
 
   .dropdown-panel-inner {
-    border: none;
+    border-top: none;
     border-left: 2px solid var(--line-dim);
     background: transparent;
-    box-shadow: none;
     padding: 0.25rem 0 0.5rem 0.75rem;
     margin-left: 0.2rem;
+  }
+
+  a.dropdown-card {
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
   }
 }
 
