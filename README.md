@@ -1,36 +1,42 @@
-# Adi's site — multi-page version
+# Adi's site - full current package
 
-This replaces the single long-scrolling page with 8 separate pages, linked from
-a top-left menu bar on every page.
+This is the complete, current state of adimenon.me. Upload everything in this
+package to the root of the GitHub repo (same level as the existing CNAME file).
 
-## Pages
-- `index.html` — Home. Just a brief intro from Adi, nothing else.
-- `story.html` — My Story (the full narrative arc)
-- `academics.html` — Coursework, GPA, SAT, skills
-- `awards.html` — Awards & Honors, grouped by year
-- `robotics.html` — MATE ROV role progression and results
-- `projects.html` — Independent engineering projects, technical detail
-- `press.html` — Real news coverage with links
-- `community.html` — Volunteering + hobbies
-- `contact.html` — Email, phone, resume download
+## Pages (upload all to repo root)
+- `index.html` - Home: brief intro, Resume button, and year-by-year cards (2022-2026)
+- `story.html` - My Story: the full narrative (origin story through personal strengths)
+- `academics.html` - Coursework, GPA, SAT, skills
+- `projects.html` - STEM Projects: 5 independent projects with photos/video on the 2026 entry
+- `robotics.html` - MATE ROV role progression, results, and the "how I started" intro
+- `awards.html` - Awards & Honors, grouped by year, with submission links
+- `press.html` - Real news coverage with links
+- `community.html` - Volunteering + hobbies
+- `contact.html` - Email, phone, resume download
+- `year-2022.html` through `year-2026.html` - Combined year-in-review pages linked from Home
 
-## Files to upload
-Upload ALL of these to the repo root (same level as CNAME):
-- All 9 `.html` files above
-- `styles.css` (replaces the old one)
-- `script.js` (replaces the old one — simpler now, just handles mobile menu)
-- `assets/adi-resume.pdf` — Adi's resume, wired up to the Contact page download button
-- `assets/photo-placeholder.svg` — kept as a fallback; the real headshot
-  (`assets/adi_profile_headshot.jpeg`) should already be in the repo from
-  before, so no need to re-upload it
+## Supporting files (upload to repo root)
+- `styles.css` - all site styling
+- `script.js` - mobile menu + dropdown behavior + scroll-spy for page sidebars
 
-## What to do with the OLD index.html
-The old `index.html` was a single long page. This new `index.html` completely
-replaces it — just overwrite it like normal.
+## Assets (upload into the `assets/` folder)
+- `adi-resume.pdf` - current resume, linked from Home and Contact
+- `wildfire-robot-1.jpg` through `wildfire-robot-4.jpg` - wildfire robot photos (Projects page)
+- `wildfire-robot-demo.mp4` - wildfire robot demo video (Projects page)
+- `project-placeholder.svg` - placeholder graphic for projects without real photos yet
+- `photo-placeholder.svg` - fallback placeholder, not currently used on any live page
 
-## Note on navigation
-Every page's top-left menu is hand-written into that page (no shared template
-— this is plain HTML with no build step), so if you ever want to add/rename a
-menu item, you'll need to update the `<nav class="topnav">` block in all 9
-files to keep them in sync. Let me know if you want help with a batch change
-like that in the future.
+**Not included here:** `assets/adi_profile_headshot.jpeg` - this was uploaded directly
+to GitHub earlier and should already be sitting in your repo's `assets/` folder. No
+need to re-upload it.
+
+## Current nav order
+Home -> Academics -> STEM Projects -> Robotics -> Awards -> Press -> Community ->
+My Story -> Contact
+
+## Notes
+- The top nav uses click-to-open dropdowns (not hover) for sections with multiple
+  anchors on the same page.
+- Most content pages have a sticky "On this page" sidebar for quick jumping between
+  sections, with the current section auto-highlighting as you scroll.
+- Em-dashes have been removed site-wide in favor of plain hyphens.
